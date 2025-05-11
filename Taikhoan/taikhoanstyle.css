@@ -1,0 +1,313 @@
+/* Base styles and reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Main container */
+.account-container {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  padding: 34px 58px 74px 13px;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+/* Company name header */
+.company-name {
+  color: rgba(26, 135, 84, 1);
+  font-size: 40px;
+  font-weight: 700;
+  align-self: center;
+}
+
+/* Main content area */
+.account-content {
+  margin-top: 68px;
+  width: 100%;
+}
+
+/* Layout for the two columns */
+.account-layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 24%;
+}
+
+.user-profile {
+  width: 100%;
+  color: rgba(0, 0, 0, 1);
+}
+
+.user-header {
+  display: flex;
+  align-items: stretch;
+  gap: 13px;
+  font-size: 32px;
+}
+
+.user-avatar {
+  aspect-ratio: 0.92;
+  object-fit: contain;
+  object-position: center;
+  width: 58px;
+  flex-shrink: 0;
+}
+
+.user-name {
+  margin: auto 0;
+  flex-grow: 1;
+  font-weight: 400;
+  width: 151px;
+}
+
+.user-navigation {
+  display: flex;
+  margin-top: 56px;
+  padding-left: 29px;
+  padding-right: 3px;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item:first-child {
+  align-self: center;
+  margin-left: 12px;
+}
+
+.nav-item:nth-child(2) {
+  margin-top: 59px;
+}
+
+.nav-item:nth-child(3) {
+  margin-top: 64px;
+}
+
+/* Main content area */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 76%;
+}
+
+.user-details {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  margin-top: 25px;
+  flex-grow: 1;
+  padding: 20px 25px 33px 68px;
+  width: 100%;
+}
+
+.details-layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* First column of details */
+.details-column:first-child {
+  width: 45%;
+}
+
+.details-group {
+  margin-top: 14px;
+  flex-grow: 1;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+}
+
+.personal-info {
+  display: flex;
+  width: 100%;
+  padding: 0 41px 0 6px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gender-label {
+  margin-top: 53px;
+}
+
+.gender-options {
+  display: flex;
+  margin-top: 4px;
+  align-items: stretch;
+  gap: 24px;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.gender-option {
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.radio-icon {
+  aspect-ratio: 0.81;
+  object-fit: contain;
+  object-position: center;
+  width: 17px;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.info-label {
+  line-height: 1.4;
+}
+
+.info-label:last-child {
+  margin-top: 47px;
+}
+
+.info-value {
+  font-weight: 700;
+}
+
+/* Second column of details */
+.details-column:nth-child(2) {
+  width: 34%;
+}
+
+.additional-info {
+  margin-top: 20px;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+}
+
+.additional-info .info-label:last-child {
+  margin-top: 41px;
+}
+
+/* Edit button column */
+.details-column:last-child {
+  width: 21%;
+}
+
+.edit-button {
+  background-color: rgba(26, 135, 84, 1);
+  padding: 5px 11px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .account-container {
+    padding-right: 20px;
+  }
+
+  .account-content {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  .account-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .user-profile {
+    margin-top: 40px;
+  }
+
+  .user-navigation {
+    padding-left: 20px;
+    margin-top: 40px;
+  }
+
+  .nav-item:nth-child(2),
+  .nav-item:nth-child(3) {
+    margin-top: 40px;
+  }
+
+  .nav-item:nth-child(3) {
+    margin-left: 6px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .user-details {
+    max-width: 100%;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .details-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .details-column {
+    width: 100% !important;
+  }
+
+  .details-group {
+    margin-top: 40px;
+  }
+
+  .personal-info {
+    padding-right: 20px;
+  }
+
+  .gender-label,
+  .info-label:last-child {
+    margin-top: 40px;
+  }
+
+  .gender-options {
+    white-space: initial;
+  }
+
+  .gender-option {
+    white-space: initial;
+  }
+
+  .additional-info {
+    margin-top: 40px;
+  }
+
+  .additional-info .info-label:last-child {
+    margin-top: 40px;
+  }
+
+  .edit-button {
+    margin-top: 40px;
+  }
+}

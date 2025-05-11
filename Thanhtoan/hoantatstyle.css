@@ -1,0 +1,265 @@
+.booking-page {
+  display: flex;
+  flex-direction: column;
+  min-height: screen;
+  background-color: #f8f9fa;
+  font-family: Inter, sans-serif;
+}
+
+.company-header {
+  color: #1a8754;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #495057;
+  background-color: #fff;
+  padding: 28px 0;
+}
+
+.progress-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 640px) {
+  .progress-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.step-indicator {
+  color: #fff;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 2px solid #28a745;
+  background-color: #28a745;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-step.current .step-indicator {
+  border-color: #1a8754;
+  background-color: #1a8754;
+}
+
+.step-label {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.confirmation-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+@media (max-width: 640px) {
+  .confirmation-container {
+    margin: 30px 15px;
+  }
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-icon {
+  color: #fff;
+  font-size: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: #28a745;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-title {
+  color: #28a745;
+  font-size: 29px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.success-description {
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.booking-code {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.code-placeholder {
+  background-color: #d9d9d9;
+  width: 131px;
+  height: 24px;
+}
+
+.ticket-details {
+  margin-top: 30px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.info-row {
+  border: 1px solid #495057;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-paid {
+  color: #1a8754;
+  font-weight: 600;
+}
+
+.passenger-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #dee2e6;
+}
+
+.usage-guidelines {
+  margin-top: 30px;
+  background-color: rgba(58, 151, 212, 0.1);
+  border: 4px solid #495057;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.guidelines-title {
+  color: #3a97d4;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.guidelines-list {
+  list-style: none;
+  padding: 0;
+}
+
+.guidelines-list li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.guidelines-list li:last-child {
+  margin-bottom: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+@media (max-width: 640px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+}
+
+.btn-primary {
+  background-color: #1a8754;
+  color: #fff;
+  padding: 13px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  border: 1px solid #1a8754;
+  color: #1a8754;
+  padding: 13px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  background: none;
+  cursor: pointer;
+}
+
+.support-info {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .support-info {
+    margin: 30px 15px;
+  }
+}
+
+.support-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.support-description {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.support-contact {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.page-footer {
+  margin-top: 30px;
+  border-top: 1px solid #dee2e6;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-copyright {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.footer-contact {
+  color: #6c757d;
+  font-size: 14px;
+}
