@@ -1,54 +1,89 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đăng Nhập</title>
+  <title>Document</title>
   <link rel="stylesheet" href="sign_instyle.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <main class="login-container">
-    <div class="login-wrapper">
-      <section class="image-column">
-        <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/e124c53b4010f880250abda646c083f99b06ecd0?placeholderIfAbsent=true" alt="Login illustration" class="hero-image">
-      </section>
+  <img
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/a3defb80af822da2c0048a78e3ed60479fded14a?placeholderIfAbsent=true"
+    alt="Login background image"
+    class="login-hero-image"
+  />
+  <section class="login-content">
+    <div class="login-form-container">
+      <header class="login-header">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/80e00b5e44027dc7d15109fda16dc299e6d2a39f?placeholderIfAbsent=true"
+          alt="Double Decker Bus"
+          class="login-logo"
+        />
+        <h1 class="login-title">Đăng Nhập</h1>
+      </header>
 
-      <section class="form-column">
-        <div class="login-form-container">
-          <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/d3f322756172444fbcd843b8fb3c68396e86a1e4?placeholderIfAbsent=true" alt="Logo" class="logo">
-          <h1 class="login-heading">Đăng Nhập</h1>
-
-          <div class="phone-input">
-            <span class="country-code">+84</span>
-            <span class="phone-placeholder">Nhập số điện thoại di động của ban</span>
-          </div>
-
-          <input type="password" placeholder="Mật khẩu" class="password-input">
-
-          <button type="submit" class="login-button">Đăng nhập</button>
-
-          <div class="account-actions">
-            <div class="signup-prompt">
-              <p class="no-account">Bạn chưa có tài khoản?</p>
-              <a href="#" class="signup-link">Đăng ký ngay</a>
+      <form class="login-form" aria-label="Login form">
+        <div class="phone-input-wrapper">
+          <div class="phone-input-container">
+            <div class="country-code">
+              <span class="code-text">+84</span>
+              <span class="code-arrow">&gt;</span>
             </div>
-
-            <p class="alt-login">Đăng nhập khác</p>
-
-            <div class="social-login">
-              <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/b039b4d3e7bb350eb1c6e5fa38d6c08744a1fdd5?placeholderIfAbsent=true" alt="Social login option" class="social-icon">
-              <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/58770de43a5da485e99972fbbb539d51b47cf658?placeholderIfAbsent=true" alt="Social login option" class="social-icon-alt">
-            </div>
+            <input
+              type="tel"
+              placeholder="Nhập số điện thoại di động của ban"
+              class="phone-input"
+              aria-label="Phone number"
+            />
           </div>
-
-          <p class="terms-text">
-            Bằng cách đăng ký , bạn đã đồng ý mọi điều khoản và
-            <span class="terms-highlight">quy định của chúng tôi</span>
-          </p>
         </div>
-      </section>
+
+        <div class="password-input-wrapper">
+          <input
+            type="password"
+            placeholder="Mật khẩu"
+            class="password-input"
+            aria-label="Password"
+          />
+        </div>
+
+        <button type="submit" class="login-button">
+          Đăng nhập
+        </button>
+      </form>
+
+      <div class="register-prompt">
+        <span class="prompt-text">Bạn chưa có tài khoản?</span>
+        <a href="#" class="register-link">Đăng ký ngay</a>
+      </div>
+
+      <div class="social-login">
+        <p class="social-login-title">Đăng nhập khác</p>
+        <div class="social-icons">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/944ccf6bb88441fc8423d035b80609169bed26b3?placeholderIfAbsent=true"
+            alt="Login with Google"
+            class="social-icon"
+          />
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a6a5b7fe7691deb0265680ff9bd92a6055869fb?placeholderIfAbsent=true"
+            alt="Login with Facebook"
+            class="social-icon"
+          />
+        </div>
+      </div>
+
+      <footer class="terms-footer">
+        <span class="terms-text">
+          Bằng cách đăng ký , bạn đã đồng ý mọi điều khoản và
+        </span>
+        <a href="#" class="terms-link">quy định của chúng tôi</a>
+      </footer>
     </div>
-  </main>
+  </section>
+</main>
+
 </body>
 </html>
