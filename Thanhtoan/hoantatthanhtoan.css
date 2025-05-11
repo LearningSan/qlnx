@@ -1,0 +1,317 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+}
+
+.main-title {
+    text-align: center;
+    color: #21996f;
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+    gap: 0;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.progress-bar .step {
+    flex: 1 1 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: -50%;
+    left: 50%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+.progress-bar .step.completed:not(:last-child)::after {
+    background: #23a07a;
+}
+
+.progress-bar .step:not(.completed):not(:last-child)::after {
+    background: #e0e0e0;
+}
+
+.progress-bar .step span {
+    position: relative;
+    z-index: 2;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #bdbdbd;
+    font-size: 1rem;
+}
+
+.step span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    color: #888;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.step.completed span {
+    background: #21996f;
+    color: #fff;
+}
+
+.step.completed {
+    color: #21996f;
+}
+
+.step.active span {
+    background: #21996f;
+    color: #fff;
+}
+
+.step.active {
+    color: #21996f;
+    font-weight: bold;
+}
+
+.success-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    padding: 32px 32px 24px 32px;
+    margin: 0 auto 30px auto;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background: #e6f7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.success-icon span {
+    color: #21996f;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.success-title {
+    color: #21996f;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.success-desc {
+    color: #222;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.ticket-code {
+    color: #222;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.ticket-code .code {
+    font-weight: bold;
+    background: #f3f7f6;
+    padding: 2px 10px;
+    border-radius: 6px;
+    color: #21996f;
+    letter-spacing: 1px;
+}
+
+.info-section {
+    width: 100%;
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.info-table {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 0 0 10px 0;
+    overflow: hidden;
+}
+
+.info-title {
+    background: #f3f7f6;
+    color: #21996f;
+    font-weight: bold;
+    font-size: 1.08rem;
+    padding: 10px 16px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .total {
+    color: #21996f;
+    font-weight: bold;
+}
+
+.info-row .paid {
+    color: #21996f;
+    font-weight: bold;
+}
+
+.guide-box {
+    width: 100%;
+    background: #eaf6f1;
+    border-left: 4px solid #21996f;
+    border-radius: 7px;
+    padding: 14px 18px 10px 18px;
+    margin-bottom: 18px;
+}
+
+.guide-title {
+    color: #21996f;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 1.08rem;
+}
+
+.guide-box ul {
+    margin: 0 0 0 18px;
+    padding: 0;
+    color: #222;
+    font-size: 0.98rem;
+}
+
+.guide-box li {
+    margin-bottom: 4px;
+}
+
+.action-btns {
+    display: flex;
+    gap: 14px;
+    margin: 18px 0 18px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn {
+    background: #21996f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 120px;
+}
+
+.btn:hover {
+    background: #176e4d;
+}
+
+.support-box {
+    width: 100%;
+    background: #f3f7f6;
+    border-radius: 7px;
+    padding: 14px 18px 10px 18px;
+    margin-bottom: 0;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.support-title {
+    color: #21996f;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 1.08rem;
+}
+
+.support-content {
+    color: #222;
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.98rem;
+    margin-top: 30px;
+    padding: 18px 0 0 0;
+}
+
+.footer-content {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 100%;
+        padding: 0 4px 30px 4px;
+    }
+
+    .info-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

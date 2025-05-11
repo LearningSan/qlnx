@@ -1,147 +1,98 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thanh toán - Nhà xe Đông Nam Bộ</title>
-  <link rel="stylesheet" href="thanhtoanstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà xe Đông Nam Bộ - Thanh toán</title>
+    <link rel="stylesheet" href="../css/thanhtoan.css">
 </head>
+
 <body>
-  <div class="payment-desktop">
     <div class="container">
-      <header class="company-name">
-        Nhà xe Đông Nam Bộ
-      </header>
-
-      <nav class="progress-steps">
-        <div class="step completed">
-          <div class="step-indicator">✓</div>
-          <div class="step-label">Chọn tuyến</div>
-        </div>
-        <div class="step completed">
-          <div class="step-indicator">✓</div>
-          <div class="step-label">Chọn ghế</div>
-        </div>
-        <div class="step active">
-          <div class="step-indicator">3</div>
-          <div class="step-label">Thanh toán</div>
-        </div>
-        <div class="step">
-          <div class="step-indicator">4</div>
-          <div class="step-label">Hoàn tất</div>
-        </div>
-      </nav>
-
-      <main class="content-wrapper">
-        <div class="content-columns">
-          <section class="booking-info">
-            <div class="info-card">
-              <h2 class="section-title">Thông tin đặt vé</h2>
-              <div class="info-content">
-                <div class="info-labels">
-                  <p>Tuyến đường:</p>
-                  <p class="label-item">Ngày khởi hành:</p>
-                  <p class="label-item">Giờ khởi hành:</p>
-                  <p class="label-item">Loại xe:</p>
-                  <p class="label-item">Điểm đón:</p>
-                  <p class="label-item">Điểm đến:</p>
-                  <p class="label-item">Số ghế:</p>
-                  <p class="label-item">Số lượng vé:</p>
-                  <p class="label-item">Giá vé:</p>
-                  <p class="total-label">Tổng tiền:</p>
-                </div>
-                <div class="info-values">
-                  <p class="route-value">TP. Hồ Chí Minh → Đà Lạt</p>
-                  <div class="values-group">
-                    <p class="value-item">26/04/2025</p>
-                    <p class="value-item">20:00</p>
-                    <p class="value-item">Giường nằm cao cấp</p>
-                    <p class="value-item">Bến xe Miền Đông mới</p>
-                    <p class="value-item">Bến xe Đà Lạt</p>
-                    <p class="value-item">A01</p>
-                    <p class="value-item">1 vé</p>
-                    <p class="value-item">350,000 VND</p>
-                    <p class="total-value">350,000 VND</p>
-                  </div>
-                </div>
-              </div>
+        <h1 class="main-title">Nhà xe Đông Nam Bộ</h1>
+        <div class="progress-bar">
+            <div class="step completed">
+                <span>✔</span>
+                <p>Chọn tuyến</p>
             </div>
-          </section>
-
-          <section class="customer-info">
-            <div class="info-card">
-              <h2 class="section-title">Thông tin khách hàng</h2>
-
-              <div class="form-group">
-                <label for="fullname" class="form-label">
-                  Họ và tên
-                  <span class="required">*</span>
-                </label>
-                <input type="text" id="fullname" class="form-input" placeholder="Nhập họ và tên người đặt vé">
-              </div>
-
-              <div class="form-group">
-                <label for="phone" class="form-label">
-                  Số điện thoại
-                  <span class="required">*</span>
-                </label>
-                <input type="tel" id="phone" class="form-input" placeholder="Nhập số điện thoại">
-              </div>
-
-              <div class="form-group">
-                <label for="email" class="form-label">
-                  Email
-                  <span class="required">*</span>
-                </label>
-                <input type="email" id="email" class="form-input" placeholder="Nhập địa chỉ email">
-              </div>
-
-              <div class="form-group">
-                <label for="notes" class="form-label">Ghi chú</label>
-                <textarea id="notes" class="form-textarea"></textarea>
-              </div>
-
-              <div class="checkbox-group">
-                <input type="checkbox" id="save-info" class="checkbox">
-                <label for="save-info" class="checkbox-label">Lưu thông tin cho lần đặt vé sau</label>
-              </div>
-
-              <h2 class="section-title payment-title">Phương thức thanh toán</h2>
-
-              <div class="payment-options">
-                <label class="payment-option">
-                  <input type="radio" name="payment-method" value="e-wallet">
-                  <span class="option-text">Ví điện tử</span>
-                </label>
-
-                <label class="payment-option">
-                  <input type="radio" name="payment-method" value="pay-later">
-                  <span class="option-text">Thanh toán khi nhận vé</span>
-                </label>
-              </div>
-
-              <div class="note-box">
-                <p class="note-title">Lưu ý:</p>
-              </div>
-
-              <div class="checkbox-group">
-                <input type="checkbox" id="terms" class="checkbox">
-                <label for="terms" class="checkbox-label">Tôi đã đọc và đồng ý với</label>
-              </div>
-
-              <div class="action-buttons">
-                <button type="button" class="btn-back">Quay lại</button>
-                <button type="button" class="btn-confirm">Xác nhận thanh toán</button>
-              </div>
+            <div class="step completed">
+                <span>✔</span>
+                <p>Chọn ghế</p>
             </div>
-          </section>
+            <div class="step active">
+                <span>3</span>
+                <p>Thanh toán</p>
+            </div>
+            <div class="step">
+                <span>4</span>
+                <p>Hoàn tất</p>
+            </div>
         </div>
-      </main>
+        <hr class="section-line">
+        <div class="main-content">
+            <div class="box info-box">
+                <h2>Thông tin đặt vé</h2>
+                <div class="info-row"><span>Tuyến đường:</span> <span>TP. Hồ Chí Minh → Đà Lạt</span></div>
+                <div class="info-row"><span>Ngày khởi hành:</span> <span>26/04/2025</span></div>
+                <div class="info-row"><span>Giờ khởi hành:</span> <span>20:00</span></div>
+                <div class="info-row"><span>Loại xe:</span> <span>Giường nằm cao cấp</span></div>
+                <div class="info-row"><span>Điểm đón:</span> <span>Bến xe Miền Đông mới</span></div>
+                <div class="info-row"><span>Điểm đến:</span> <span>Bến xe Đà Lạt</span></div>
+                <div class="info-row"><span>Số ghế:</span> <span>A01</span></div>
+                <div class="info-row"><span>Số lượng vé:</span> <span>1 vé</span></div>
+                <div class="info-row"><span>Giá vé:</span> <span>350,000 VND</span></div>
+                <div class="total-row">
+                    <span>Tổng tiền:</span>
+                    <span class="total">350,000 VND</span>
+                </div>
+            </div>
+            <div class="box form-box">
+                <h2>Thông tin khách hàng</h2>
+                <form>
+                    <label for="name">Họ và tên<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Nhập họ và tên người đặt vé" required>
 
-      <footer class="contact-info">
-        Hotline: 1234 5678 | Email: 123@gmail.com
-      </footer>
+                    <label for="phone">Số điện thoại<span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+
+                    <label for="email">Email<span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+
+                    <label for="note">Ghi chú</label>
+                    <textarea id="note" name="note" placeholder=""></textarea>
+
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="save-info" name="save-info">
+                        <label for="save-info">Lưu thông tin cho lần đặt vé sau</label>
+                    </div>
+
+                    <h2>Phương thức thanh toán</h2>
+                    <div class="payment-methods">
+                        <button type="button" class="payment-btn">Ví điện tử</button>
+                        <button type="button" class="payment-btn">Thanh toán khi nhận vé</button>
+                    </div>
+                    <div class="note-box">
+                        <b>Lưu ý:</b>
+                    </div>
+                    <div class="checkbox-row">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">Tôi đã đọc và đồng ý với</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="back-btn">Quay lại</button>
+                        <button type="submit" class="confirm-btn">Xác nhận thanh toán</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                © Nhà xe Đông Nam Bộ<br>
+                Hotline: 1234 5678 | Email: 123@gmail.com
+            </div>
+        </footer>
     </div>
-  </div>
 </body>
+
 </html>
