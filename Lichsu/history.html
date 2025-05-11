@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lịch Sử Vé</title>
+ <link rel="stylesheet" href="historystyle.css">
+</head>
+<body>
+  <main class="ticket-history-container">
+    <div class="content-wrapper">
+      <h1 class="page-title">LỊCH SỬ VÉ</h1>
+
+      <div class="content-section">
+        <!-- Filter Section -->
+        <section class="filter-container">
+          <div class="filter-options">
+            <button class="filter-option">Hôm nay</button>
+            <button class="filter-option">Tuần này</button>
+
+            <div class="date-range-container">
+              <div class="date-group">
+                <span class="date-label">Từ</span>
+                <span class="date-value">1/1/2025</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/48252037dbdf4c9c3a5ee6eaf949e687f3c102dd" alt="Calendar" class="calendar-icon">
+              </div>
+
+              <div class="date-group">
+                <span class="date-label">đến</span>
+                <span class="date-value">1/1/2025</span>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/48252037dbdf4c9c3a5ee6eaf949e687f3c102dd" alt="Calendar" class="calendar-icon">
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-button-container">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ede28c9edc0551afa777927c56df4e8b623b479c" alt="Filter" class="filter-icon">
+            <span class="filter-text">LỌC</span>
+          </div>
+        </section>
+
+        <!-- Status Section -->
+        <section class="status-container">
+          <h2 class="status-label">Trạng thái vé</h2>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/608d8bf46e542b5b493882f9d1d60716ba1fbe4d" alt="Status" class="status-icon">
+        </section>
+
+        <!-- Ticket Table Section -->
+        <section class="ticket-table-container">
+          <div class="table-header">
+            <div class="header-cell">Mã vé</div>
+            <div class="header-cell">Tuyến</div>
+            <div class="header-cell">Ngày đi</div>
+            <div class="header-cell">Trạng thái</div>
+          </div>
+
+          <div class="table-body">
+            <div class="table-row row-cancelled">
+              <div class="cell">CX01</div>
+              <div class="cell">Sài Gòn - PT</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Đã hủy</div>
+            </div>
+
+            <div class="table-row row-completed">
+              <div class="cell">CX02</div>
+              <div class="cell">Sài Gòn - Đà Lạt</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Đã đi</div>
+            </div>
+
+            <div class="table-row row-pending">
+              <div class="cell">CX03</div>
+              <div class="cell">Sài Gòn - Lâm Đồng</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Chưa đi</div>
+            </div>
+
+            <div class="table-row row-cancelled">
+              <div class="cell">CX04</div>
+              <div class="cell">Sài Gòn - Cà Mai</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Đã hủy</div>
+            </div>
+
+            <div class="table-row row-cancelled">
+              <div class="cell">CX05</div>
+              <div class="cell">PT - Sài Gòn</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Đã hủy</div>
+            </div>
+
+            <div class="table-row row-pending">
+              <div class="cell">CX06</div>
+              <div class="cell">Nha Trang - Sài Gòn</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Chưa đi</div>
+            </div>
+
+            <div class="table-row row-cancelled">
+              <div class="cell">CX07</div>
+              <div class="cell">Sài Gòn - Phú Quốc</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Đã hủy</div>
+            </div>
+
+            <div class="table-row row-completed">
+              <div class="cell">CX08</div>
+              <div class="cell">Sài Gòn - PT</div>
+              <div class="cell">1/1/2025</div>
+              <div class="cell">Đã đi</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer-container">
+          <div class="hotline-button">
+            <svg width="50" height="50" viewBox="0 0 935 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="hotline-icon">
+              <path d="M95.5 24L56 53.625H65.875V93.125H85.625V73.375H105.375V93.125H125.125V53.3288L135 53.625L95.5 24Z" fill="black"></path>
+            </svg>
+
+            <span class="hotline-text">Hotline</span>
+
+            <svg width="50" height="50" viewBox="0 0 935 118" fill="none" xmlns="http://www.w3.org/2000/svg" class="hotline-icon">
+              <path d="M827.289 27.5625L816 38.6988L821.765 44.3854L836.016 58.681L821.765 72.7396L816 78.1893L827.289 89.5625L833.054 83.8759L847.546 69.5803L861.797 83.8759L867.322 89.5625L878.851 78.1893L873.087 72.7396L858.595 58.681L873.087 44.3854L878.851 38.6988L867.322 27.5625L861.797 33.2491L847.546 47.3077L833.054 33.2491L827.289 27.5625Z" fill="black"></path>
+            </svg>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
