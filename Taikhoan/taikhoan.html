@@ -1,86 +1,82 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tài khoản - Nhà xe Đông Nam Bộ</title>
-  <link rel="stylesheet" href="taikhoanstyle.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tài khoản - Nhà xe Đông Nam Bộ</title>
+<link rel="stylesheet" href="taikhoanstyle.css">
 </head>
+
 <body>
-  <main class="account-container">
-    <h1 class="company-name">Nhà xe Đông Nam Bộ</h1>
+	<section class="main-content">
+		<form class="user-details-form" action="/Loginservlet/Account"
+			method="post">
+			<h2 class="form-title">Thông tin cá nhân</h2>
+			<div class="form-grid">
+				<div class="form-group">
+					<label for="fullname">Tên của bạn</label> <input type="text"
+						id="fullname" name="fullname"  required>
+				</div>
 
-    <div class="account-content">
-      <div class="account-layout">
-        <!-- Left sidebar with user info and navigation -->
-        <section class="sidebar">
-          <div class="user-profile">
-            <div class="user-header">
-              <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/cb5d664e0d95fc5146049dc693dfa5d831af57b1?placeholderIfAbsent=true" alt="Ảnh đại diện người dùng" class="user-avatar">
-              <h2 class="user-name">Trần Văn B</h2>
-            </div>
-            <nav class="user-navigation">
-              <a href="#" class="nav-item">Ưu đãi của tôi</a>
-              <a href="#" class="nav-item">Chuyến đi của tôi</a>
-              <a href="#" class="nav-item">Thông tin của tôi</a>
-            </nav>
-          </div>
-        </section>
+				<div class="form-group">
+					<label>Giới tính</label>
+					<div class="gender-options">		
+						<input type="radio" name="gender" value="Nam"checked> <label>Nam </label>
+						<input type="radio" name="gender" value="Nu"> <label>Nữ</label>
+					</div>
+				</div>
 
-        <!-- Main content area with user details -->
-        <section class="main-content">
-          <article class="user-details">
-            <div class="details-layout">
-              <!-- First column of user details -->
-              <div class="details-column">
-                <div class="details-group">
-                  <div class="personal-info">
-                    <p class="info-label">
-                      Tên của bạn:<br>
-                      <span class="info-value">Trần Văn B</span>
-                    </p>
-                    <p class="info-label gender-label">Giới tính</p>
-                    <div class="gender-options">
-                      <label class="gender-option">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/5cf7065c3e8e46da884dad061e4d8732d7b65f49?placeholderIfAbsent=true" alt="" class="radio-icon">
-                        <span class="gender-text">Nam</span>
-                      </label>
-                      <label class="gender-option">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/9cbeddd9969e4f428c70b8b975c6add2/5cf7065c3e8e46da884dad061e4d8732d7b65f49?placeholderIfAbsent=true" alt="" class="radio-icon">
-                        <span class="gender-text">Nữ</span>
-                      </label>
-                    </div>
-                  </div>
-                  <p class="info-label">
-                    Địa chỉ email<br>
-                    <span class="info-value">abcd@gmail.com</span>
-                  </p>
-                </div>
-              </div>
+				<div class="form-group">
+					<label for="email">Địa chỉ email</label> <input type="email"
+						id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Địa chỉ</label> <input type="text" id="diachi"
+						name="diachi" required>
+				</div>
+				<div class="form-group">
+					<label for="dob">Ngày sinh</label> <input type="date" id="ngaysinh"
+						name="ngaysinh" required>
+				</div>
 
-              <!-- Second column of user details -->
-              <div class="details-column">
-                <div class="additional-info">
-                  <p class="info-label">
-                    Ngày sinh<br>
-                    --/--/---
-                  </p>
-                  <p class="info-label">
-                    Số điện thoại<br>
-                    <span class="info-value">0123456789</span>
-                  </p>
-                </div>
-              </div>
+				<div class="form-group">
+					<label for="phone">Số điện thoại</label> <input type="text"
+						id="phone" name="phone" required>
+				</div>
 
-              <!-- Edit button column -->
-              <div class="details-column">
-                <button class="edit-button" aria-label="Chỉnh sửa thông tin cá nhân">Chỉnh sửa</button>
-              </div>
-            </div>
-          </article>
-        </section>
-      </div>
-    </div>
-  </main>
+				<div class="form-actions">
+					<button type="submit" class="edit-button">Lưu thay đổi</button>
+				</div>
+			</div>
+		</form>
+	</section>
+
+	<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    fetch("/Loginservlet/accountinfo")
+      .then(res => res.json())
+      .then(data => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          document.getElementById("fullname").value = data.hoten;
+          document.getElementById("email").value = data.email;
+          document.getElementById("diachi").value = data.diachi;
+          document.getElementById("ngaysinh").value = data.ngaysinh;
+          document.getElementById("phone").value = data.taikhoan;
+          const genderRadios = document.querySelectorAll("input[name='gender']");
+          genderRadios.forEach(radio => {
+            if (radio.value === data.gioitinh) {
+              radio.checked = true;
+            } else {
+              radio.checked = false; // reset những radio không khớp
+            }
+          });        }
+      });
+  });
+</script>
+
 </body>
+
 </html>

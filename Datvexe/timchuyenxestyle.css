@@ -146,7 +146,6 @@
 }
 
 .location-inputs {
-  display: flex;
   width: 100%;
 }
 
@@ -159,8 +158,8 @@
 
 .input-column {
   display: flex;
-  width: 50%;
-  padding: 0 10px;
+  width: 100%;
+  margin-top: 20px
 }
 
 .input-column:first-child {
@@ -308,4 +307,20 @@
     font-size: 40px;
     padding: 20px;
   }
+}
+
+.input-select {
+  border: none;
+  background: transparent;
+  font-size: 36px;
+  font-family: Taviraj, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #000;
+  width: 100%;
+  padding-left: 10px;
+  outline: none;
+  appearance: none;
+}
+
+.input-select::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
 }
