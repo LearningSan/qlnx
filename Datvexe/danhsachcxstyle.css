@@ -1,114 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Taviraj:wght@400;700&display=swap');
 
-.schedule-container {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #e5f7f5, #2b7c74);
-  padding: 24px;
-  font-family: 'Taviraj', serif;
-}
+    body {
+      margin: 0;
+      font-family: 'Taviraj', serif;
+    }
 
-.schedule-wrapper {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    .schedule-container {
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #e5f7f5, #2b7c74);
+      padding: 24px;
+    }
 
-.schedule-title {
-  font-size: 65px;
-  font-weight: 700;
-  color: #000;
-  text-align: center;
-  margin-bottom: 40px;
-}
+    .schedule-wrapper {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-.schedule-table {
-  width: 100%;
-  border-radius: 25px;
-  overflow: hidden;
-  border: 3px solid #0F766E;
-}
+    .schedule-title {
+      font-size: 65px;
+      font-weight: 700;
+      color: #000;
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-.table-header {
-  background-color: #55C5BC;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding: 20px;
-  border: 3px solid #0F766E;
-}
+    .schedule-table {
+      width: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 3px solid #0F766E;
+    }
 
-.header-cell {
-  font-size: 36px;
-  color: #000;
-  font-weight: 400;
-}
+    .table-header {
+      background-color: #55C5BC;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding: 20px;
+      border: 3px solid #0F766E;
+    }
 
-.table-body {
-  background-color: #CFF6F3;
-}
+    .header-cell {
+      font-size: 36px;
+      color: #000;
+      font-weight: 400;
+    }
 
-.table-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  padding: 20px;
-  border: 3px solid #0F766E;
-}
+    .table-body {
+      background-color: #CFF6F3;
+    }
 
-.cell {
-  font-size: 36px;
-  color: #000;
-  font-weight: 400;
-}
+    .table-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding: 20px;
+      border: 3px solid #0F766E;
+    }
 
-.book-button {
-  background-color: #30B1A5;
-  color: #FFF;
-  font-size: 36px;
-  padding: 12px 24px;
-  border-radius: 20px;
-  border: 2px solid #0F766E;
-  cursor: pointer;
-  font-family: 'Taviraj', serif;
-  transition: background-color 0.3s ease;
-}
+    .cell {
+      font-size: 36px;
+      color: #000;
+      font-weight: 400;
+    }
 
-.book-button:hover {
-  background-color: #2a9d92;
-}
+    .book-button {
+      background-color: #30B1A5;
+      color: #FFF;
+      font-size: 36px;
+      padding: 12px 24px;
+      border-radius: 20px;
+      border: 2px solid #0F766E;
+      cursor: pointer;
+      font-family: 'Taviraj', serif;
+      transition: background-color 0.3s ease;
+    }
 
-.book-button:focus {
-  outline: 3px solid #0F766E;
-  outline-offset: 2px;
-}
+    .book-button:hover {
+      background-color: #2a9d92;
+    }
 
-@media (max-width: 991px) {
-  .schedule-title {
-    font-size: 50px;
-  }
+    .book-button:focus {
+      outline: 3px solid #0F766E;
+      outline-offset: 2px;
+    }
 
-  .header-cell,
-  .cell,
-  .book-button {
-    font-size: 28px;
-  }
-}
+    @media (max-width: 991px) {
+      .schedule-title {
+        font-size: 50px;
+      }
 
-@media (max-width: 640px) {
-  .schedule-title {
-    font-size: 36px;
-  }
+      .header-cell,
+      .cell,
+      .book-button {
+        font-size: 28px;
+      }
+    }
 
-  .table-header {
-    display: none;
-  }
+    @media (max-width: 640px) {
+      .schedule-title {
+        font-size: 36px;
+      }
 
-  .table-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-  }
+      .table-header {
+        display: none;
+      }
 
-  .cell,
-  .book-button {
-    font-size: 24px;
-  }
-}
+      .table-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .cell,
+      .book-button {
+        font-size: 24px;
+      }
+    }

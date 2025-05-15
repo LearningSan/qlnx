@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="timchuyenxestyle.css">
+  <link rel="stylesheet" href="timchuyenxestyle.css?v=2">
 </head>
 
 <body>
@@ -34,9 +34,7 @@
                   alt="Origin icon" class="location-icon" aria-hidden="true" />
                 <select id="origin" name="origin" class="input-select">
                   <option value="">Chọn điểm đi</option>
-                  <option value="hanoi">Hà Nội</option>
-                  <option value="danang">Đà Nẵng</option>
-                  <option value="hochiminh">Hồ Chí Minh</option>
+
                 </select>
               </div>
 
@@ -50,9 +48,6 @@
                   alt="Destination icon" class="location-icon" aria-hidden="true" />
                 <select id="destination" name="destination" class="input-select">
                   <option value="">Chọn điểm đến</option>
-                  <option value="hanoi">Hà Nội</option>
-                  <option value="danang">Đà Nẵng</option>
-                  <option value="hochiminh">Hồ Chí Minh</option>
                 </select>
               </div>
 
@@ -74,14 +69,55 @@
     </main>
   </header>
 <script>
-  document.querySelectorAll('.input-group').forEach(group => {
-    const dateInput = group.querySelector('input[type="date"]');
-    if (dateInput) {
-      group.addEventListener('click', () => {
-        dateInput.showPicker && dateInput.showPicker(); // For modern browsers
-        dateInput.focus(); // Fallback
+document.addEventListener('DOMContentLoaded', function () {
+    // Date picker logic
+    document.querySelectorAll('.input-group').forEach(group => {
+      const dateInput = group.querySelector('input[type="date"]');
+      if (dateInput) {
+        group.addEventListener('click', () => {
+          dateInput.showPicker && dateInput.showPicker(); // For modern browsers
+          dateInput.focus(); // Fallback
+        });
+      }
+    });
+
+    // Fetch origin and destination data
+    fetch("/Loginservlet/TimChuyenXe")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+       .then(data => {
+      console.log("Data received:", data);
+
+      const originSelect = document.getElementById('origin');
+      const destinationSelect = document.getElementById('destination');
+
+      // Xóa các option cũ (giữ lại option "Chọn điểm đi/đến")
+      originSelect.length = 1;
+      destinationSelect.length = 1;
+
+      // Đổ dữ liệu điểm đi
+      data.origins.forEach(origin => {
+        const option = document.createElement('option');
+        option.value = origin;
+        option.textContent = origin;
+        originSelect.appendChild(option);
       });
-    }
+
+      // Đổ dữ liệu điểm đến
+      data.destinations.forEach(destination => {
+        const option = document.createElement('option');
+        option.value = destination;
+        option.textContent = destination;
+        destinationSelect.appendChild(option);
+      });
+    })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
   });
 </script>
 </body>
