@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xe 16 cho</title>
-  <link rel="stylesheet" href="chonghestyle.css">
+  <link rel="stylesheet" href="chonghestyle.css?v=2">
   <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <h1 class="selection-title">Chọn ghế:</h1>
     <div class="selection-container">
        <section class="seat-layout">
-        <div class="seat-grid">
+        <div class="seat-grid" id="seat-container">
           <!-- Left Column -->
           <div class="seat-column">
             <div class="seat-wrapper">
@@ -120,33 +120,74 @@
             </div>
           </div>
         </section>
-        <button class="checkout-button" aria-label="Proceed to payment">Chọn ghế</button>
+        <button class="checkout-button" aria-label="Proceed to payment">Xác nhận</button>
       </div>
     </div>
   </main>
 
   <script>
-  document.querySelectorAll('.seat-image[data-type="available"]').forEach(seat => {
-    const originalSrc = seat.src;
-    const hoverSrc = "https://cdn.builder.io/api/v1/image/assets/TEMP/0bbcedd1aad4628758a681e1de84cbc8ad3ca1f2"; // Selected seat
-    const clickedSrc = "https://cdn.builder.io/api/v1/image/assets/TEMP/7d942587872f43a85f25f1e57322a69dfa8b7b63"; // Sold seat
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const diemdi = params.get('diemdi');
+    const diemden = params.get('diemden');
+    const ngaydi = params.get('ngaydi');
 
-    let isClicked = false;
+    if (!diemdi || !diemden || !ngaydi) {
+      console.error('Thiếu tham số truy vấn');
+      return;
+    }
 
-    seat.addEventListener('mouseover', () => {
-      if (!isClicked) seat.src = hoverSrc;
-    });
-
-    seat.addEventListener('mouseout', () => {
-      if (!isClicked) seat.src = originalSrc;
-    });
-
-    seat.addEventListener('click', () => {
-      seat.src = clickedSrc;
-      isClicked = true;
-    });
+    fetch(`/Loginservlet/layghe?diemdi=${encodeURIComponent(diemdi)}&diemden=${encodeURIComponent(diemden)}&ngaydi=${encodeURIComponent(ngaydi)}`)
+      .then(response => {
+        if (!response.ok) throw new Error("Lỗi khi gọi API /layghe");
+        return response.json();
+      })
+   .then(data => {
+  console.log("Danh sách ghế từ server:", data);
+  data.forEach(ghe => {
+    if (ghe.tenghe && typeof ghe.tenghe === 'string') {
+      const seatNum = ghe.tenghe.trim().replace(/^0+/, ''); // Bỏ số 0 đầu nếu có
+      const seatImg = document.querySelector(`img.seat-image[data-seat-number="${seatNum}"]`);
+      if (seatImg) {
+        if (ghe.trangthai === 'Đã đặt') {
+          seatImg.src = 'https://cdn.builder.io/api/v1/image/assets/TEMP/7d942587872f43a85f25f1e57322a69dfa8b7b63';
+          seatImg.setAttribute('data-type', 'booked');
+        } else {
+          seatImg.src = 'https://cdn.builder.io/api/v1/image/assets/TEMP/70fbdbcaad0a1bdafab7b44aa6eb2731de3d2320';
+          seatImg.setAttribute('data-type', 'available');
+        }
+      } else {
+        console.warn(`Không tìm thấy ghế: ${seatNum}`);
+      }
+    }
   });
-</script>
+})
+      .catch(err => {
+        console.error('Lỗi khi tải danh sách ghế:', err);
+      });
+  });
+  document.querySelectorAll('.seat-image[data-type="available"]').forEach(seat => {
+	    const originalSrc = seat.src;
+	    const hoverSrc = "https://cdn.builder.io/api/v1/image/assets/TEMP/0bbcedd1aad4628758a681e1de84cbc8ad3ca1f2"; // Selected seat
+	    const clickedSrc = "https://cdn.builder.io/api/v1/image/assets/TEMP/7d942587872f43a85f25f1e57322a69dfa8b7b63"; // Sold seat
 
+	    let isClicked = false;
+
+	    seat.addEventListener('mouseover', () => {
+	      if (!isClicked) seat.src = hoverSrc;
+	    });
+
+	    seat.addEventListener('mouseout', () => {
+	      if (!isClicked) seat.src = originalSrc;
+	    });
+
+	    seat.addEventListener('click', () => {
+	      seat.src = clickedSrc;
+	      isClicked = true;
+	    });
+	  });
+  
+</script>
 </body>
 </html>
+
